@@ -1,0 +1,3 @@
+a60d610fe4f745e5828070c9f6e57e19
+
+https://newsapi.org/v2/everything?q=Apple&from=2022-07-23&sortBy=popularity&apiKey=a60d610fe4f745e5828070c9f6e57e19
