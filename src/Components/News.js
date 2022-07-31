@@ -3,6 +3,7 @@ import Card from "../Components/Card";
 import PropTypes from "prop-types";
 
 export default function News(props) {
+  const apiKey = process.env.REACT_APP_API_KEY;
   const article= [
     {
     "source": {
@@ -453,7 +454,7 @@ export default function News(props) {
   const [loading, setLoading] = useState(true);
   
   const updateNews = async () => {
-    // const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&page=${props.page}&pageSize=${props.pageSize}&apiKey=a60d610fe4f745e5828070c9f6e57e19`;
+    // const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&page=${props.page}&pageSize=${props.pageSize}&apiKey=${apiKey}`;
     
     setLoading(true);
     let response = await fetch(article);
@@ -462,17 +463,14 @@ export default function News(props) {
     setArticles(data.article);
     setTotalResults(data.totalResults);
     setLoading(false);
-    console.log("article are: ", article )
   };
 
   useEffect(() => {
     updateNews();
   }, []);
 
-  console.log("articles", article);
-
   const fetchMoreData = async () => {
-        // const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&page=${props.page}&pageSize=${props.pageSize}&apiKey=a60d610fe4f745e5828070c9f6e57e19`;
+        // const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&page=${props.page}&pageSize=${props.pageSize}&apiKey=${apiKey}`;
 
     const url = article;
 
