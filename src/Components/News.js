@@ -496,6 +496,7 @@ export default function News(props) {
           title={element.title}
           description={element.description}
           imageUrl={element.urlToImage}
+          author={element.author}
         />
       </div>
       })}
