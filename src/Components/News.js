@@ -3,8 +3,7 @@ import Card from "../Components/Card";
 import PropTypes from "prop-types";
 
 export default function News(props) {
-  const apiKe = process.env.REACT_APP_API_KEY; //replace with your API key
-  const apiKey = "a60d610fe4f745e5828070c9f6e57e19"; //replace with your API key
+  const apiKey = process.env.REACT_APP_API_KEY; //replace with your API key
   const [articles, setArticles] = useState([]);
   const [totalResults, setTotalResults] = useState(0);
   const [page, setPage] = useState(1);
@@ -37,7 +36,7 @@ export default function News(props) {
 
   return (
     <div>
-      <h2>News - Headlines</h2>
+      <h2>News - Headlines </h2>
       <hr />
     <div className="container my-3">
 
