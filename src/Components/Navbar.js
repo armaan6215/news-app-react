@@ -32,19 +32,19 @@ export default function Navbar() {
 
           </ul>
         </li>
-        {/* <li className="nav-item dropdown">
+        <li className="nav-item dropdown">
           <Link className="nav-link dropdown-toggle" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Countries
           </Link>
           <ul className="dropdown-menu bg-dark">
-            <li><Link className="dropdown-item text-light" to="#">Australia</Link></li>
-            <li><Link className="dropdown-item text-light" to="#">India</Link></li>
-            <li><Link className="dropdown-item text-light" to="#">Newzealand</Link></li>
-            <li><Link className="dropdown-item text-light" to="#">Russia</Link></li>
-            <li><Link className="dropdown-item text-light" to="#">USA</Link></li>
-            <li><Link className="dropdown-item text-light" to="#">UAE</Link></li>
+            <li><Link className="dropdown-item text-light" to="/australia">Australia</Link></li>
+            <li><Link className="dropdown-item text-light" to="/india">India</Link></li>
+            <li><Link className="dropdown-item text-light" to="/newzealand">Newzealand</Link></li>
+            <li><Link className="dropdown-item text-light" to="/russia">Russia</Link></li>
+            <li><Link className="dropdown-item text-light" to="/usa">USA</Link></li>
+            <li><Link className="dropdown-item text-light" to="/uae">UAE</Link></li>
           </ul>
-        </li> */}
+        </li>
     </ul>
     <form className="form-inline my-2 my-lg-0">
       <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>

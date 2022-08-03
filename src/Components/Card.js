@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Card(props) {
-  let {title, description, imageUrl, author} = props;
+  let {title, description, imageUrl, author, newsUrl} = props;
   return (
     <div className="my-3">
 
@@ -11,7 +11,7 @@ export default function Card(props) {
     <h5 className="card-title">{title}</h5>
     <p className="card-text">{description}</p>
     <div className="container d-flex">
-    <a style={{width:"25%", height:"30px"}} href="#" className="btn btn-sm btn-primary mr-5">Details</a>
+    <a style={{width:"25%", height:"30px"}} href={newsUrl} className="btn btn-sm btn-primary mr-5" target="_blank">Details</a>
     <div className="ml-5 d-flex">
     source: <h5>{author}</h5>
     </div>
