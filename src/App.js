@@ -27,6 +27,9 @@ function App() {
               <Route path="/india" element={<News key="india" country="in"/>}></Route>
               <Route path="/newzealand" element={<News key="newzealand" country="nz"/>}></Route>
 
+              <Route path="/hindi" element={<News key="hindi" lang="hi"/>}></Route>
+              <Route path="/english" element={<News key="english" lang="en"/>}></Route>
+
            </Routes>
       </Router>
     </div>
