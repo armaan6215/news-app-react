@@ -3,14 +3,15 @@ import Card from "../Components/Card";
 import PropTypes from "prop-types";
 
 export default function News(props) {
-  const apiKey = process.env.REACT_APP_API_KEY; //replace with your API key
+  const apiKey = process.env.REACT_APP_GNEWS_API_KEY;
   const [articles, setArticles] = useState([]);
   const [totalResults, setTotalResults] = useState(0);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
   
   const updateNews = async () => {
-    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&pageSize=${props.pageSize}&apiKey=${apiKey}`;
+    // const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&pageSize=${props.pageSize}&apiKey=${apiKey}`;
+    const url = `https://gnews.io/api/v4/top-headlines?topic=${props.topic}&token=${apiKey}`
     
     setLoading(true);
     let response = await fetch(url);
@@ -25,8 +26,8 @@ export default function News(props) {
   }, []);
 
   const fetchMoreData = async () => {
-        const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&page=${props.page}&pageSize=${props.pageSize}&apiKey=${apiKey}`;
-
+        // const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&page=${props.page}&pageSize=${props.pageSize}&apiKey=${apiKey}`;
+        const url = `https://gnews.io/api/v4/top-headlines?token=${apiKey}`
     setLoading(true);
     let response = await fetch(url);
     let data = await response.json();
@@ -46,7 +47,7 @@ export default function News(props) {
         <Card
           title={element.title}
           description={element.description}
-          imageUrl={element.urlToImage}
+          imageUrl={element.image}
           author={element.author}
           newsUrl={element.url}
         />
