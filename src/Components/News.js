@@ -11,19 +11,23 @@ export default function News(props) {
   const updateNews = async () => {
     // const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&pageSize=${props.pageSize}&apiKey=${apiKey}`;
     let url = `https://gnews.io/api/v4/top-headlines?topic=${props.topic}&token=${apiKey}`;
-
-    let response = await fetch(url);
-    let data = await response.json();
-    console.log("data: ", data);
-    if (data !== undefined) {
-      if (data.errors != null) {
-        setErrors(data.errors);
-        console.log("error is: ", errors);
-      } else {
-        setArticle(data.articles);
-        console.log("data length is:", article.length);
-      }
+    try{
+      let response = await fetch(url);
+      let data = await response.json();
+      console.log("data: ", data);
+      if (data !== undefined) {
+        if (data.errors != null) {
+          setErrors(data.errors);
+          console.log("error is: ", errors);
+        } else {
+          setArticle(data.articles);
+          console.log("data length is:", article.length);
+        }
+      } 
+      }catch{
+        console.log(errors)
     }
+    
   };
 
   useEffect(() => {
@@ -55,9 +59,10 @@ export default function News(props) {
         </div>
       </div>
     );
-  } else {
+          }
+  else{
     console.log("error");
-    return <Error />;
+    return <Error errors={errors}/>;
   }
 }
 
